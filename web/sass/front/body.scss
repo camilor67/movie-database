@@ -1,0 +1,62 @@
+.container {
+	width: 900px;
+	.results {
+		p {
+			color: #000;
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			color: #000;
+		}
+
+		div {
+			&.item {
+				display: block;
+				float: none;
+				margin-bottom: 20px;
+
+				&.profile {
+					display: -webkit-box;
+					display: -moz-box;
+					display: -ms-flexbox;
+					display: -webkit-flex; 
+					display: flex;
+
+					p {
+						&.name {
+							font-size: 1.4em;
+						}
+					}
+
+					div {
+						&.image_content {
+							overflow: visible;
+							width: 90px;
+							box-sizing: border-box;
+							margin-right: 20px;
+
+							img {
+								width: 90px;
+								height: 90px;
+								border-radius: 4px;
+							}
+						}
+
+						&.content {
+							box-sizing: border-box;
+							overflow: hidden;
+
+							p {
+								&.sub{
+									font-weight: 300;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

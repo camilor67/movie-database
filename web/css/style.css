@@ -1,0 +1,39 @@
+/*@import "_variables";*/
+/*@import "header";*/
+/*@import "footer";*/
+.container {
+  width: 900px; }
+  .container .results p {
+    color: #000;
+    padding: 0;
+    margin: 0; }
+  .container .results a {
+    color: #000; }
+  .container .results div.item {
+    display: block;
+    float: none;
+    margin-bottom: 20px; }
+    .container .results div.item.profile {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex; }
+      .container .results div.item.profile p.name {
+        font-size: 1.4em; }
+      .container .results div.item.profile div.image_content {
+        overflow: visible;
+        width: 90px;
+        box-sizing: border-box;
+        margin-right: 20px; }
+        .container .results div.item.profile div.image_content img {
+          width: 90px;
+          height: 90px;
+          border-radius: 4px; }
+      .container .results div.item.profile div.content {
+        box-sizing: border-box;
+        overflow: hidden; }
+        .container .results div.item.profile div.content p.sub {
+          font-weight: 300; }
+
+/*# sourceMappingURL=style.css.map */
