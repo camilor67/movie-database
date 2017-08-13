@@ -9,15 +9,10 @@ if (empty($_POST['page']))
 else 
 	$page = $_POST['page'];
 
-// response if there are errors
 if ( ! empty($errors)) {
-
-  // if there are items in our errors array, return those errors
 	$data['success'] = false;
 	$data['errors']  = $errors;
 } else {
-
-  // if there are no errors, return a message
 	$data['success'] = true;
 	$data['message'] = 'Success!';
 }

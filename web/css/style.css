@@ -1,8 +1,22 @@
-/*@import "_variables";*/
-/*@import "header";*/
-/*@import "footer";*/
+header {
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  background-color: #081c24;
+  width: 100%;
+  z-index: 999;
+  min-height: 100px;
+  padding: 1em; }
+
+footer {
+  min-height: 50px;
+  color: #fff;
+  background-color: #081c24;
+  padding: 1em; }
+
 .container {
-  width: 900px; }
+  max-width: 900px;
+  margin-top: 1em; }
   .container .results p {
     color: #000;
     padding: 0;
@@ -29,7 +43,8 @@
         .container .results div.item.profile div.image_content img {
           width: 90px;
           height: 90px;
-          border-radius: 4px; }
+          border-radius: 4px;
+          background-color: #dbdbdb; }
       .container .results div.item.profile div.content {
         box-sizing: border-box;
         overflow: hidden; }

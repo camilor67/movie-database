@@ -1,19 +1,14 @@
 <?php
-// print_r($_REQUEST);
 if (empty($_REQUEST['id']))
 	$errors['id'] = 'id is required.';
 else 
 	$id = $_REQUEST['id'];
 
-// response if there are errors
 if ( ! empty($errors)) {
 
-  // if there are items in our errors array, return those errors
 	$data['success'] = false;
 	$data['errors']  = $errors;
 } else {
-
-  // if there are no errors, return a message
 	$data['success'] = true;
 	$data['message'] = 'Success!';
 }
@@ -45,8 +40,7 @@ $movies = $response->cast;
 usort($movies, function($a, $b) {
 	return $a->release_date <= $b->release_date;
 });
-// echo "<pre>".print_r( $movies, true)."</pre>";
-// echo json_encode($movies);
+
 include_once 'header.php';
 ?>
 <div class="container initiative">
@@ -55,7 +49,7 @@ include_once 'header.php';
 			<?php foreach($movies as $movie):?>
 			<div class="item profile list_item">
 				<div class="image_content profile">
-					<img class="profile lazyautosizes lazyloaded" data-sizes="auto" src="https://image.tmdb.org/t/p/w90_and_h90_bestv2<?= $movie->poster_path ?>">
+					<img class="profile lazyautosizes lazyloaded" data-sizes="auto" src="https://image.tmdb.org/t/p/w90_and_h90_bestv2<?= $movie->poster_path ?>" alt="<?= $movie->title ?>">
 				</div>
 
 				<div class="content">
