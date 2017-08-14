@@ -20,8 +20,8 @@
   <header class="main">
     <div class="container-fluid clearfix" style="margin-bottom: 1em;">
       <div class="inner clearfix">
-        <h1><a href="https://gentle-river-44639.herokuapp.com">The Movie Database
-        </a></h1>
+        <h2><a href="https://gentle-river-44639.herokuapp.com">The Movie Database
+        </a></h2>
       </div>
     </div>
   </header>

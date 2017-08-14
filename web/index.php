@@ -3,7 +3,7 @@
     <article class="inner clearfix">
       <form class= "clearfix" ng-submit="processForm()">
         <div class="" style="float: left; width: 100%">
-          <div class="form-group col-xs-12 col-sm-4">
+          <div class="form-group col-xs-12">
             <input type="text" class="form-control" id="name" name="name" placeholder="Search for person" ng-model="formData.name" required>
           </div>
         </div>
@@ -13,14 +13,14 @@
         <div class="item profile list_item" ng-repeat="x in myData">
           <div class="image_content profile">
             <a id="person_{{ x.id}}" class="result" href="/person.php?id={{ x.id }}" title="{{ x.name }}" alt="{{ x.name}}">
-              <img class="profile lazyautosizes lazyloaded" data-sizes="auto" src="https://image.tmdb.org/t/p/w90_and_h90_bestv2{{ x.profile_path}}" alt="{{ x.name}}">
+              <img class="profile lazyautosizes lazyloaded" data-sizes="auto" src="{{ x.profile_path}}" alt="{{ x.name}}">
             </a>
           </div>
 
           <div class="content">
             <p class="name"><a id="person_{{ x.id }}" class="result" href="/person.php?id={{ x.id }}" title="{{ x.name }}" alt="{{ x.name}}">{{ x.name }}</a></p>
             <p class="sub">
-              <span ng-repeat="know in x.known_for">{{ know.original_title + know.original_name + ', ' }}</span>
+              <span>{{ x.known_for }}</span>
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@
             $scope.myVar = true;
           } else {
             $scope.message = '';
-            $scope.myData = response.data.results;
+            $scope.myData = response.data;
             $scope.myVar = false;
           }
         },function myError(response) {

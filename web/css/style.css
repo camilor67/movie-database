@@ -1,8 +1,57 @@
+/*@import "_variables";*/
+/*@import "header";*/
+/*@import "footer";*/
+body {
+  font-size: 16px;
+  display: block;
+  line-height: 1.59; }
+
+p {
+  font-size: 120%;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px; }
+
+h1 {
+  font-size: 400%;
+  line-height: 1.2;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  text-align: center;
+  margin: 2em 0 0;
+  font-weight: bolder; }
+
+h2 {
+  font-size: 300%;
+  line-height: 1.2;
+  font-family: 'Raleway', sans-serif;
+  /*color: white;*/
+  text-align: center;
+  margin: .5em 0 0;
+  font-weight: bolder; }
+
+a {
+  color: #222; }
+
+a:hover {
+  color: #444;
+  text-decoration: none; }
+
+html {
+  font-size: 110%;
+  line-height: 1.59;
+  color: #222;
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
 header {
   /*position: fixed;*/
   top: 0;
   left: 0;
-  background-color: #081c24;
+  background-color: #fff;
   width: 100%;
   z-index: 999;
   min-height: 100px;
@@ -10,13 +59,23 @@ header {
 
 footer {
   min-height: 50px;
-  color: #fff;
-  background-color: #081c24;
-  padding: 1em; }
+  color: #666;
+  background-color: #fff;
+  padding: 1em;
+  text-align: center; }
 
 .container {
   max-width: 900px;
   margin-top: 1em; }
+  .container .profile_detail {
+    overflow: hidden; }
+    .container .profile_detail .image_content {
+      float: left; }
+      .container .profile_detail .image_content img {
+        max-width: 150px; }
+    .container .profile_detail .detail_content {
+      float: left;
+      max-width: 700px; }
   .container .results p {
     color: #000;
     padding: 0;
@@ -32,9 +91,13 @@ footer {
       display: -moz-box;
       display: -ms-flexbox;
       display: -webkit-flex;
-      display: flex; }
+      display: flex;
+      margin-top: 1.5em; }
       .container .results div.item.profile p.name {
-        font-size: 1.4em; }
+        font-size: 1.5em;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        color: #222; }
       .container .results div.item.profile div.image_content {
         overflow: visible;
         width: 90px;
@@ -43,12 +106,15 @@ footer {
         .container .results div.item.profile div.image_content img {
           width: 90px;
           height: 90px;
-          border-radius: 4px;
-          background-color: #dbdbdb; }
+          border-radius: 45px;
+          background-color: #dbdbdb;
+          border: 1px solid gainsboro;
+          box-shadow: 2px 2px 5px #ccc; }
       .container .results div.item.profile div.content {
         box-sizing: border-box;
         overflow: hidden; }
         .container .results div.item.profile div.content p.sub {
-          font-weight: 300; }
+          font-weight: 300;
+          color: #444; }
 
 /*# sourceMappingURL=style.css.map */
