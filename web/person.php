@@ -68,17 +68,19 @@ $profile_path = ($personDetail->profile_path)?'https://image.tmdb.org/t/p/w600_a
 
 include_once 'header-person.php';
 ?>
-<div class="container initiative">
-	<article class="inner clearfix">
-		<div class="profile_detail">
+<section class="container-fluid grey-section">
+	<div class="container profile_detail">
 			<div class="image_content">
 				<img class="poster" data-sizes="auto" data-src="<?php echo $profile_path?>" data-srcset="<?php echo $profile_path?> 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/lhjnYohEn2HflqCEnWuuilcNUsj.jpg 2x" alt="<?php echo $personDetail->name?>" sizes="300px" srcset="<?php echo $profile_path?> 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/lhjnYohEn2HflqCEnWuuilcNUsj.jpg 2x" src="<?php echo $profile_path?>">
 			</div>
 			<div class="detail_content">
-				<h2><?php echo $personDetail->name?></h2>
-				<p><?php echo $personDetail->biography?></p>
+				<h3><?php echo $personDetail->name?></h3>
+				<p class="p-biography"><?php echo $personDetail->biography?></p>
 			</div>
 		</div>
+</section>
+<div class="container initiative">
+	<article class="inner clearfix">
 		<div class="results">
 			<?php foreach($movies as $movie):?>
 				<?php $movie_profile_path = ($movie->poster_path)?'https://image.tmdb.org/t/p/w600_and_h900_bestv2'.$movie->poster_path:'images/movie.png';?>

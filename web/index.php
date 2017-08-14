@@ -2,10 +2,11 @@
   <div class="container initiative" ng-app="formApp" ng-controller="formController">
     <article class="inner clearfix">
       <form class= "clearfix" ng-submit="processForm()">
-        <div class="" style="float: left; width: 100%">
-          <div class="form-group col-xs-12">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Search for person" ng-model="formData.name" required>
-          </div>
+        <div class="form-group col-xs-12 search-div">
+          <span class="oi oi-magnifying-glass"></span>
+          <!-- <span class="oi oi-arrow-circle-bottom" ng-hide="loading"></span> -->
+          <i class="fa fa-circle-o-notch fa-spin" ng-hide="loading"></i>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Search for person" ng-model="formData.name" required>
         </div>
       </form>
       <div id="messages" ng-show="message">{{ message }}</div>
@@ -34,7 +35,9 @@
       $scope.formData = {};
       $scope.myData = {};
       $scope.myVar = false;
+      $scope.loading = true;
       $scope.processForm = function() {
+        $scope.loading = false;
         $http({
           method  : 'POST',
           url     : 'search.php',
@@ -43,9 +46,8 @@
         })
         .then(function(response) {
           $scope.result = response
-          console.log(response.data);
 
-          if (response.data.total_results<=0) {
+          if (response.data.length <= 0) {
             $scope.message = 'No found data';
             $scope.myVar = true;
           } else {
@@ -53,8 +55,10 @@
             $scope.myData = response.data;
             $scope.myVar = false;
           }
+          $scope.loading = true;
         },function myError(response) {
           $scope.message = response;
+          $scope.loading = true;
         });
       };
     });

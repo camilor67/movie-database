@@ -32,6 +32,14 @@ h2 {
   margin: .5em 0 0;
   font-weight: bolder; }
 
+h3 {
+  font-size: 180%;
+  line-height: 1.2;
+  font-size: 'Raleway', sans-serif;
+  text-align: left;
+  font-weight: bolder;
+  color: white; }
+
 a {
   color: #222; }
 
@@ -64,9 +72,45 @@ footer {
   padding: 1em;
   text-align: center; }
 
+.p-biography {
+  color: #ccc; }
+
+.grey-section {
+  background: #222;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: table;
+  padding: 3em;
+  border-bottom: 2px solid #aaa;
+  margin-bottom: 3em; }
+
+img.poster {
+  border: 1px solid #333;
+  border-radius: 3px;
+  margin-right: 1.2em;
+  width: 9em;
+  float: left; }
+
 .container {
   max-width: 900px;
   margin-top: 1em; }
+  .container .search-div {
+    position: relative; }
+    .container .search-div .oi-magnifying-glass {
+      right: 5px;
+      position: absolute;
+      line-height: 2.3; }
+    .container .search-div .oi-arrow-circle-bottom {
+      right: 28px;
+      position: absolute;
+      line-height: 2.3; }
+    .container .search-div .fa-spin {
+      right: 28px;
+      position: absolute;
+      line-height: 2.3;
+      font-size: 17px; }
   .container .profile_detail {
     overflow: hidden; }
     .container .profile_detail .image_content {

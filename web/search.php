@@ -46,12 +46,13 @@ foreach ($persons->results as $key => $person) {
 	$person_tmp->id = $person->id;
 	$person_tmp->name = $person->name;
 	$person_tmp->profile_path = ($person->profile_path)?'https://image.tmdb.org/t/p/w90_and_h90_bestv2'.$person->profile_path:'images/movie.png';
+	$person_tmp->popularity = $person->popularity;
 	$person_tmp->known_for = '';
 	foreach ($person->known_for as $known_for) {
 		$person_tmp->known_for .= (isset($known_for->original_name))?$known_for->original_name.', ':$known_for->original_title.', ';
 	}
 	$person_tmp->known_for = substr($person_tmp->known_for, 0, -2);
-	$resultsSearch[] = $person_tmp;
+	$resultsSearch[$person->id] = $person_tmp;
 }
 // echo "<pre>".print_r($resultsSearch,true)."</pre>";
 
@@ -109,11 +110,16 @@ foreach ($movies->results as $movie) {
 		$person_tmp->id = $person->id;
 		$person_tmp->name = $person->name;
 		$person_tmp->profile_path = ($person->profile_path)?'https://image.tmdb.org/t/p/w90_and_h90_bestv2'.$person->profile_path:'images/movie.png';
+		$person_tmp->popularity = 0;
 		$person_tmp->known_for = $movie->title;
-		$resultsSearch[] = $person_tmp;
+		if (!isset($resultsSearch[$person->id]))
+			$resultsSearch[$person->id] = $person_tmp;
 	}
 	// echo "<pre>".print_r($cast->cast,true)."</pre>";
 }
 
 // echo "<pre>".print_r($resultsSearch,true)."</pre>";
+usort($resultsSearch, function($a, $b) {
+	return $a->popularity <= $b->popularity;
+});
 echo json_encode($resultsSearch);
