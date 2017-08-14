@@ -71,7 +71,7 @@ include_once 'header-person.php';
 <section class="container-fluid grey-section">
 	<div class="container profile_detail">
 			<div class="image_content">
-				<img class="poster" data-sizes="auto" data-src="<?php echo $profile_path?>" data-srcset="<?php echo $profile_path?> 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/lhjnYohEn2HflqCEnWuuilcNUsj.jpg 2x" alt="<?php echo $personDetail->name?>" sizes="300px" srcset="<?php echo $profile_path?> 1x, https://image.tmdb.org/t/p/w600_and_h900_bestv2/lhjnYohEn2HflqCEnWuuilcNUsj.jpg 2x" src="<?php echo $profile_path?>">
+				<img class="poster" data-sizes="auto" data-src="<?php echo $profile_path?>" data-srcset="<?php echo $profile_path?> 1x, <?php echo $profile_path?> 2x" alt="<?php echo $personDetail->name?>" sizes="300px" srcset="<?php echo $profile_path?> 1x, <?php echo $profile_path?> 2x" src="<?php echo $profile_path?>">
 			</div>
 			<div class="detail_content">
 				<h3><?php echo $personDetail->name?></h3>
